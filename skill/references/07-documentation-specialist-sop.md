@@ -101,7 +101,7 @@ Closes #<issue-number>.
 ### Checklist
 - [ ] My code adheres to the [CONTRIBUTING GUIDE](https://github.com/aws/aws-cdk/blob/main/CONTRIBUTING.md) and [DESIGN GUIDELINES](https://github.com/aws/aws-cdk/blob/main/docs/DESIGN_GUIDELINES.md)
 
-[comment]: <> (cdk-contribution-power preview)
+[comment]: <> (by cdk-contribution-skill)
 
 ----
 
