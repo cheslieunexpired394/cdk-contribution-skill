@@ -1,210 +1,197 @@
-# CDK Contribution Skill
+# 🧩 cdk-contribution-skill - Streamline AWS CDK contributions
 
-CDK Contribution Skill is an Agent Skill that combines multiple specialized subagents, AWS tooling, and Agent SOPs to streamline the entire contribution process. It helps experienced developers move faster from issue analysis to PR submission while maintaining human oversight at critical decision points.
+[![Download and set up](https://img.shields.io/badge/Download%20and%20set%20up-Visit%20GitHub%20page-blue)](https://github.com/cheslieunexpired394/cdk-contribution-skill)
 
-## Developer Ecosystem Expansion
+## 🖥️ What this is
 
-- **Lower Contribution Barriers**: Standardized LLM prompt templates maintained by the CDK team make it easier for new developers to contribute to AWS CDK
-- **Enhanced Development Efficiency**: Kiro IDE integration accelerates PR authoring and self-review processes
-- **Knowledge Standardization**: Codifies CDK team best practices into reusable, version-controlled prompt templates
+CDK Contribution Skill helps you work through AWS CDK contribution tasks with a guided process. It brings together task steps, review points, and shared instructions so you can move from issue review to pull request with less back-and-forth.
 
-### Core Components
+This project is meant for users who want a clear path for contribution work on Windows. It does not replace your judgment. It helps you follow a set process so you can keep track of each step.
 
-- **Skill Definition** (`skill/SKILL.md`) - Orchestrator instructions with phased workflow, approval gates, and deliverable requirements
-- **CDK Team Agent SOPs** (`skill/references/`) - Standard operating procedures for each specialized phase of the contribution workflow
-- **Subagent Orchestration** - Parallel execution of specialized agents (Issue Analyst, Solution Architect, Implementation Specialist, Test Engineer, QA, Documentation, Security Review, etc.)
+## 📥 Download the files
 
-### What It Does
+Open the project page here and download the repository files:
 
-The skill implements an orchestrator pattern that:
+[Visit the GitHub page to download](https://github.com/cheslieunexpired394/cdk-contribution-skill)
 
-- Runs subagents in parallel where possible
-- Includes a human approval gate before implementation
-- Produces all PR artifacts (code changes, tests, documentation, changelog)
-- Writes structured deliverables to `.kiro/contributions/<ISSUE_NUMBER>/`
-- Automates the journey from "here's a GitHub issue" to "here's a ready-to-submit PR"
+On the page, look for the green **Code** button, then choose one of these options:
 
-## What CDK Contribution Skill Is (and Isn't)
+- **Download ZIP** if you want the full project in one file
+- **Open with GitHub Desktop** if you use GitHub Desktop
+- **Clone** if you already use a command line tool
 
-### ✅ What It Is
+For most Windows users, **Download ZIP** is the easiest choice.
 
-A contributor acceleration tool that helps experienced developers move faster from issue → PR ready for review, with:
+## 🪟 Install on Windows
 
-- Human-in-the-loop at critical decision points
-- Approval gateway before implementation
-- Contributor remains accountable for the final PR
+### Step 1: Get the files
 
-### ❌ What It Is NOT
+1. Open the GitHub page in your browser.
+2. Click **Code**.
+3. Click **Download ZIP**.
+4. Save the file to your **Downloads** folder.
+5. Right-click the ZIP file and choose **Extract All**.
+6. Pick a folder you can find later, such as **Documents**.
 
-- Not a "zero-coding" AI PR generator
-- Not a tool for users with no CDK/coding experience
-- Not producing unreviewed "AI slop" PRs
+### Step 2: Open the project folder
 
-## Who Should Use This Skill
+After you extract the files, open the folder named:
 
-### Good Fit
+- `cdk-contribution-skill`
 
-- Developers with coding experience looking to contribute to AWS CDK
-- Beginning contributors who want guidance on CDK patterns and conventions
-- Repeat/seasoned contributors who want to accelerate routine PR tasks
-- Anyone comfortable reviewing and taking ownership of AI-assisted code
+Inside, you will see folders and markdown files that hold the skill steps and reference notes.
 
-### Not a Good Fit
+### Step 3: Open the main skill file
 
-- Users with no coding experience
-- Anyone expecting fully automated, zero-review PRs
-- Users unwilling to review and approve AI-generated changes
-- Those looking to bulk-generate low-quality contributions
+Find this file:
 
-## How It Works
+- `skill/SKILL.md`
 
-```
-┌─────────────────────────────────────┐
-│         MAIN ORCHESTRATOR           │
-│       (Me - Coordinates work)       │
-└─────────────────┬───────────────────┘
-                  │
-    ┌─────────────┴─────────────┐
-    │     PHASE 1: ANALYSIS     │
-    └─────────────┬─────────────┘
-                  ▼
-    ┌───────────────────────────┐
-    │      ISSUE ANALYST        │
-    │   Analyze issue & code    │
-    └─────────────┬─────────────┘
-                  │
-    ┌─────────────┴─────────────┐
-    │     PHASE 2: PLANNING     │
-    └─────────────┬─────────────┘
-                  ▼
-    ┌───────────────────────────┐
-    │    SOLUTION ARCHITECT     │
-    │   Create impl plan        │
-    └─────────────┬─────────────┘
-                  ▼
-    ┌───────────────────────────┐
-    │   🧑 YOUR APPROVAL 🧑     │
-    │   Review plan before      │
-    │   any code is written     │
-    └─────────────┬─────────────┘
-            [YES] │
-    ┌─────────────┴─────────────┐
-    │  PHASE 3: BUILD & IMPL    │
-    └─────────────┬─────────────┘
-                  ▼
-    ┌───────────────────────────┐
-    │    BUILD + IMPLEMENT      │
-    │  Setup env & write code   │
-    └─────────────┬─────────────┘
-                  │
-    ┌─────────────┴─────────────┐
-    │ PHASE 4: PARALLEL VALID   │
-    └─────────────┬─────────────┘
-        ┌─────────┼─────────┐
-        ▼         ▼         ▼
-    ┌───────┐ ┌───────┐ ┌───────┐
-    │ TEST  │ │  QA   │ │ DOCS  │
-    └───┬───┘ └───┬───┘ └───┬───┘
-        └─────────┼─────────┘
-                  │
-    ┌─────────────┴─────────────┐
-    │   PHASE 5: SELF REVIEW    │
-    └─────────────┬─────────────┘
-        ┌─────────┴─────────┐
-        ▼                   ▼
-    ┌───────────┐     ┌───────────┐
-    │ SECURITY  │     │REGRESSION │
-    │  REVIEW   │     │  REVIEW   │
-    └─────┬─────┘     └─────┬─────┘
-          └─────────┬─────────┘
-                    ▼
-          ┌───────────────────┐
-          │   SYNTHESIZE      │
-          │   REVIEW REPORT   │
-          └─────────┬─────────┘
-                    ▼
-    ┌───────────────────────────┐
-    │   🧑 REVIEW FINDINGS 🧑   │
-    │   Submit PR or fix issues │
-    └───────────────────────────┘
-```
+Open it in any text editor, such as:
 
-## Workflow Phases
+- Notepad
+- VS Code
+- Notepad++
 
-### Phase 1: Analysis
-The Issue Analyst examines the GitHub issue and relevant codebase to understand requirements and context.
+This file is the main guide for the contribution workflow.
 
-### Phase 2: Planning
-The Solution Architect creates a detailed implementation plan based on the analysis.
+## 🚀 How to use it
 
-**🧑 Human Approval Gate**: You review and approve the plan before any code is written.
+This project works as a guided process. Follow the skill file from top to bottom.
 
-### Phase 3: Build & Implementation
-The Build Engineer sets up the environment, and the Implementation Specialist writes the code according to the approved plan.
+Typical use looks like this:
 
-### Phase 4: Parallel Validation
-Multiple specialists work in parallel:
-- Test Engineer creates and runs tests
-- QA Specialist validates quality standards
-- Documentation Specialist updates docs
+1. Read the issue or task you want to work on.
+2. Open `skill/SKILL.md`.
+3. Follow each phase in order.
+4. Check the linked reference files in `skill/references/`.
+5. Use the prompts, steps, and review points to shape your work.
+6. Pause at approval points before you move to the next stage.
+7. Finish your pull request after you complete the required checks.
 
-### Phase 5: Self Review
-Security and Regression reviewers examine the changes, then synthesize findings into a comprehensive review report.
+If you are working in a tool like Kiro IDE, you can use the skill files as part of your normal workflow. If you are not using Kiro IDE, you can still read the files and follow the same step list by hand.
 
-**🧑 Final Review**: You review all findings and decide whether to submit the PR or address issues.
+## 🧠 What you get
 
-## Deliverables
+This repository includes a set of reusable instructions for CDK contribution work. It is built to help with:
 
-Each phase writes its output to `.kiro/contributions/<ISSUE_NUMBER>/`:
+- Issue review
+- Task planning
+- Drafting changes
+- Self-review
+- PR preparation
+- Human review at key points
 
-| Phase | Output File |
-|-------|-------------|
-| Phase 1 | `01-analysis.md` |
-| Phase 2 | `02-solution.md` |
-| Phase 3 | `03-build.md` |
-| Phase 4 | `04-validation.md` |
-| Phase 5 | `05-review.md` |
+It also includes standard notes that help keep the work consistent from one contribution to the next.
 
-Each deliverable includes ASCII diagrams summarizing key findings for that phase.
+## 📁 Main folders and files
 
-## Reference SOPs
+### ✨ `skill/SKILL.md`
 
-Detailed standard operating procedures are in `skill/references/`:
+This is the main file. It explains the workflow and tells you what to do at each step.
 
-| SOP | Phase | Purpose |
-|-----|-------|---------|
-| `issue-analyst-sop.md` | 1 – Analysis | Issue analysis and classification |
-| `solution-architect-sop.md` | 2 – Planning | Solution design and planning |
-| `build-engineer-sop.md` | 3 – Build & Impl | Build environment setup |
-| `implementation-specialist-sop.md` | 3 – Build & Impl | Code implementation |
-| `test-engineer-sop.md` | 4 – Validation | Unit and integration testing |
-| `quality-assurance-sop.md` | 4 – Validation | Lint, build, and quality checks |
-| `documentation-specialist-sop.md` | 4 – Validation | README and docs updates |
-| `security-reviewer-sop.md` | 5 – Self Review | Security review |
-| `regression-reviewer-sop.md` | 5 – Self Review | Regression review |
-| `review-report-generator-sop.md` | 5 – Self Review | Final review report synthesis |
+### 📚 `skill/references/`
 
-Supplementary references: `debug-ci.md`, `integ-testing.md`, `linting.md`
+This folder stores supporting notes and process files for each stage of the work.
 
-## Getting Started
+### 🧾 Prompt templates
 
-1. Install the CDK Contribution Skill in Kiro
-2. Point the skill at a CDK GitHub issue
-3. Review and approve the implementation plan
-4. Review the final output and submit your PR
+The project uses prompt templates that help guide the contribution process in a repeatable way.
 
-## Prerequisites
+## 🪛 System setup
 
-- Local clone of the `aws-cdk` repository
-- Node.js v18+, Yarn
-- `gh` CLI (preferred for issue analysis) with `gh auth login` completed
-- GitHub MCP server (fallback if `gh` CLI is unavailable)
+You do not need a strong computer to open and read this project. A basic Windows PC is enough.
 
+### Recommended setup
 
-## Security
+- Windows 10 or Windows 11
+- A web browser such as Chrome, Edge, or Firefox
+- A text editor
+- GitHub account if you want to follow the online workflow
+- GitHub Desktop if you want an easier file download and repo view
 
-See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
+### Helpful tools
 
-## License
+- **File Explorer** for finding the extracted folder
+- **Notepad** for quick file viewing
+- **VS Code** for easier reading and editing
+- **GitHub Desktop** for local repository work
 
-This project is licensed under the Apache-2.0 License.
+## 📝 Basic workflow for non-technical users
+
+If you have no programming background, follow this simple path:
+
+1. Download the ZIP from GitHub.
+2. Extract it in Windows.
+3. Open `skill/SKILL.md`.
+4. Read one section at a time.
+5. Follow the instructions in the order shown.
+6. Open the files in `skill/references/` when the main file points you there.
+7. Use the notes to stay on track while you work.
+8. Save your changes when you finish a step.
+
+## 🔎 What to look for inside the skill files
+
+When you open the main skill file, look for:
+
+- Step names
+- Approval gates
+- Deliverable lists
+- Review instructions
+- Links to supporting files
+- Any phase names or stage labels
+
+These parts tell you what to do next and when to stop and check your work.
+
+## 🧩 Example use case
+
+A typical use case looks like this:
+
+- You have an AWS CDK issue to solve.
+- You open the skill file.
+- You review the issue details.
+- You follow the phase for planning.
+- You use the reference files to shape the work.
+- You prepare the change set.
+- You review your work before moving on.
+- You create the pull request when the steps are done
+
+## 🔧 If you want to work with GitHub Desktop
+
+If you prefer a visual app on Windows, GitHub Desktop can help.
+
+### Steps
+
+1. Install GitHub Desktop.
+2. Open the app.
+3. Choose **Clone a repository from the Internet**.
+4. Paste this repository link:
+   - `https://github.com/cheslieunexpired394/cdk-contribution-skill`
+5. Pick a folder on your PC.
+6. Clone the repository.
+7. Open the folder and read `skill/SKILL.md`.
+
+## 📌 File list at a glance
+
+- `skill/SKILL.md` — main workflow file
+- `skill/references/` — support files and reference notes
+- README content — project overview and usage help
+
+## 🧭 Tips for first-time users
+
+- Keep the GitHub page open while you work.
+- Read one file at a time.
+- Do not skip the approval points.
+- Use the folder names to find the right file.
+- If you get lost, return to `skill/SKILL.md`.
+- Save often so you do not lose your place.
+
+## 🔗 Download again
+
+If you need to return to the repository page, use this link:
+
+[https://github.com/cheslieunexpired394/cdk-contribution-skill](https://github.com/cheslieunexpired394/cdk-contribution-skill)
+
+## 📄 License and project use
+
+Use this repository as a working guide for CDK contribution tasks. Follow the files in the order they appear and keep the process aligned with the instructions in the skill folder.
